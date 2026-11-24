@@ -84,7 +84,7 @@ GitHub Actions runs the suite with MATLAB R2026a and the declared toolboxes. Tes
 - Simulations 5–6 preserve all 100 repetitions per amplitude in `results.phase_bins`, but `results.phase_alpha_table` and the plotted summary retain **only the last repetition** for each amplitude. This existing aggregation is intentionally preserved; the plotted table must not be interpreted as a repetition average. A phase bin without a trial in that final repetition can also be `NaN`.
 - Reaction-time summaries are `NaN` when no response occurs. In Simulations 7–8, zero stimulus intensity produces no stimulus events, so its response rate is also undefined (`NaN`). These values are preserved rather than replaced with zeros.
 - Simulation 9 plots nominal configured stimulus durations in milliseconds using the sampling rate (at 400 Hz: 2.5, 10, 20, 30, 40, and 47.5 ms). This labels the configured durations; it does not independently validate pulse timing in the model.
-- Simulations 11–12 quantize the 42 ms relative input delay to the nearest sample, consistently with `cortex.compute`: at 400 Hz, 16.8 samples becomes 17 samples (42.5 ms). This avoids fractional indexing and preserves the shifted input's length. Temporal resolution remains limited by the sampling rate.
+- Simulations 11–12 currently emit `Integer operands are required for colon operator when used as index` in `simulate_bimodal` when the relative input delay is 16.8 samples (42 ms at 400 Hz). The current MATLAB release completes the run, but this fractional indexing is unresolved: the legacy slicing can shorten the shifted input by one sample. The existing calculation is intentionally preserved; passing the regression suite does not validate this timing.
 
 ## Citation and contributions
 

@@ -53,8 +53,7 @@ for stim_iter = 1:config.n_conditions
         CTX{1}.excitatory_input=excitatory_input;
         CTX{4}.excitatory_input=excitatory_input1;
     else                 % V+A
-        % Quantize to samples, consistently with cortex.compute.
-        delay_val=round((CTX{1}.Prev_edge.axonal_delay-CTX{4}.Prev_edge.axonal_delay)/1000*srate);
+        delay_val=(CTX{1}.Prev_edge.axonal_delay-CTX{4}.Prev_edge.axonal_delay)/1000*srate;
         excitatory_input2=[excitatory_input1(delay_val+1:end) excitatory_input1(1:delay_val)];
         CTX{1}.excitatory_input=excitatory_input2;
         CTX{4}.excitatory_input=excitatory_input1;

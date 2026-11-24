@@ -17,12 +17,7 @@ classdef TestSimulationExamples < matlab.unittest.TestCase
             cd(root);
             set(groot, 'DefaultFigureVisible', 'off');
             rng(2026, 'twister');
-            lastwarn('');
             [result, settings] = executeEntry(Script);
-            if strcmp(Script, 'simulation_11_and_12')
-                testCase.verifyEmpty(lastwarn, ...
-                    'The bimodal example must complete without indexing warnings.');
-            end
             testCase.verifyEqual(which('cortex'), fullfile(root, 'cortex.m'));
             validateResults(testCase, Script, result, settings);
 
