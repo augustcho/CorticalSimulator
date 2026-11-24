@@ -1,0 +1,7 @@
+.DS_Store
+*.asv
+*.m~
+matlab_crash_dump.*
+/artifacts/
+/simulation_*_output.mat
+/simulation_*.png
