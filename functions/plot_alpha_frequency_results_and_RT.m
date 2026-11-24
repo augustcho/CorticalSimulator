@@ -16,7 +16,7 @@ figure;
 errorbar(results.osc_hz_list, zscore(m_rt*1000), ...
          zscore(s_rt*1000), 'LineWidth', linewidth1, 'DisplayName','Cortical Simulator',...
          'CapSize',20);
-ylabel('Normalized Reaction Time (ms)');
+ylabel('Normalized Reaction Time (z-score)');
 xlabel('Alpha Frequency (Hz)');
 set(gca,'FontSize',20,'LineWidth',linewidth2);
 xlim([min(results.osc_hz_list)-0.5, max(results.osc_hz_list)+0.5]);

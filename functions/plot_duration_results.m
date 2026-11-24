@@ -4,12 +4,13 @@ function plot_duration_results(results, varargin)
 
 p = inputParser;
 addParameter(p,'compareStudies',true,@islogical);
+addParameter(p,'samplingRate',400,@(x) isnumeric(x) && isscalar(x) && isfinite(x) && x > 0);
 parse(p,varargin{:});
 compareStudies = p.Results.compareStudies;
 
 linewidth1 = 6; linewidth2 = 2;
 
-xduration = linspace(2.5,2.5*results.stim_durations(end),length(results.stim_durations));
+xduration = 1000 * results.stim_durations / p.Results.samplingRate;
 m_rt = mean(results.m_rts,1,'omitnan');
 s_rt = mean(results.s_rts,1,'omitnan');
 

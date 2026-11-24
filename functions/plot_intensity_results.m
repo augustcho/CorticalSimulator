@@ -24,7 +24,7 @@ ylim([120 320]); xlim([-2 2]); box off; hold on;
 
 if compareStudies
     % --- Cattel 1886 ---
-    load Cattel1886.mat
+    load cattel1886.mat
     cattelX = zscore(stim_intensity);
     cattelY = mean(RT,2);
     errorbar(cattelX, mean(RT,2), mean(RT_std,2), ...
@@ -64,7 +64,7 @@ set(gca,'FontSize',20,'LineWidth',linewidth2);
 ylabel('STD of Reaction Time (ms)'); xlabel('Stim. Intensity'); ylim([0 30]); box off; hold on;
 
 if compareStudies
-    load Cattel1886.mat
+    load cattel1886.mat
     cattelX = zscore(stim_intensity);
     cattelY = mean(RT_std,2);
     plot(cattelX, cattelY, 'LineWidth',linewidth2, 'DisplayName','Cattel 1886');
