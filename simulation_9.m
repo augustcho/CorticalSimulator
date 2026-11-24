@@ -3,4 +3,5 @@ clear; clc; close all;
 config = config_duration();
 results = simulate_duration(config);
 
-plot_duration_results(results,'compareStudies',true);
+plot_duration_results(results,'compareStudies',true, ...
+    'samplingRate',config.parameters.srate);

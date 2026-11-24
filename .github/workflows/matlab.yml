@@ -1,4 +1,4 @@
-name: MATLAB Simulation 1
+name: MATLAB simulation examples
 
 on:
   push:
@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  simulation-1:
+  simulation-examples:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         if: always()
         with:
-          name: simulation-1-results
+          name: simulation-example-results
           path: artifacts/
           retention-days: 14
           if-no-files-found: warn
