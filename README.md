@@ -2,9 +2,9 @@
 
 A MATLAB package for exploring how cortical excitation, oscillatory inhibition, and propagation delays affect simulated neural responses and behavioral measures. The package includes configurable simulations of excitability, response rate, reaction time, and multisensory conditions.
 
-![Mean simulated cortical response across 31 alpha amplitudes](cortical-preview.svg)
+![Simulated cortical excitability versus alpha power and phase, overlaid with published study curves](cortical-preview.svg)
 
-Simulation 1 varies alpha oscillation amplitude across 31 conditions. Each point is the mean response from one condition in the MATLAB simulation.
+Simulations [1](simulation_1.m) and [2](simulation_2.m) compare the model (solid line) with published measurements across alpha power and phase. Excitability is standardized within each series. Both panels include Haegens and Schalk, and the power panel also includes Potes.
 
 This is the NCAN-hosted fork of [`augustcho/CorticalSimulator`](https://github.com/augustcho/CorticalSimulator). The original source history and MIT License are preserved.
 
