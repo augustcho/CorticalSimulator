@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use Cortical Simulator, cite this software and record the commit used."
+type: software
+title: "Cortical Simulator"
+authors:
+  - family-names: Cho
+    given-names: Hohyun
+repository-code: "https://github.com/neurotechcenter/CorticalSimulator"
+url: "https://github.com/neurotechcenter/CorticalSimulator"
+license: MIT
